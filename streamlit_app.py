@@ -50,7 +50,7 @@ GROQ_API_KEY = "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"
 os.environ["GROQ_API_KEY"] = GROQ_API_KEY
 client = Groq()
 
-model = SentenceTransformer('all-MiniLM-L6-v2')
+model = SentenceTransformer('all-MiniLM-L6-v2', device = 'cpu')
 
 # Vibe-based examples
 typical_examples = {
