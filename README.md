@@ -7,7 +7,7 @@ Just describe the style you're going for (e.g., "flowy summer dress for a beach 
 2. **Match those attributes** against a real product catalog (`Apparels_shared.xlsx`).
 3. **Display the top matching items** based on key-wise semantic similarity.
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://chatbot-template.streamlit.app/)
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://fashion-recommendation-assistant.streamlit.app/)
 
 ### How to run it on your own machine
 
