@@ -10,7 +10,7 @@ import re
 sys.modules['torch.classes'] = None
 
 # Load API key
-GROQ_API_KEY = "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"
+GROQ_API_KEY = st.secrets["groq"]["api_key"]
 os.environ["GROQ_API_KEY"] = GROQ_API_KEY
 client = Groq()
 
