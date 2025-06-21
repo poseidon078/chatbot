@@ -26,32 +26,6 @@ df.columns = [c.lower() for c in df.columns]
 # Lowercase all cell values for string comparison
 df = df.map(lambda x: str(x).lower() if pd.notna(x) else x)
 
-# Match function
-def is_match(row, final):
-    for key, val in final.items():
-        if key not in row or pd.isna(row[key]):
-            continue
-        cell = row[key]
-        if isinstance(val, list):
-            if any(v.lower() in cell for v in val):
-                return True
-        elif isinstance(val, str):
-            if val.lower() in cell:
-                return True
-    return False
-
-def match_score(row, final):
-    score = 0
-    for key, val in final.items():
-        if key not in row or pd.isna(row[key]):
-            continue
-        cell = row[key]
-        if isinstance(val, list):
-            score += sum(bool(re.search(rf"\b{re.escape(v.lower())}\b", cell)) for v in val)
-        elif isinstance(val, str):
-            score += bool(re.search(rf"\b{re.escape(val.lower())}\b", cell))
-    return score
-
 # Compute and store row-wise key → embedding dictionary
 df["embedding_dict"] = None
 
